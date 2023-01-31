@@ -1,0 +1,158 @@
+body
+  margin: 0
+  
+#canvas
+  width: 800px
+  height: 600px
+
+.wrapper
+  width: 100vw
+  height: 100vh
+  background-color: #cffff7
+  display: flex
+
+  canvas
+    position: relative
+    margin: auto
+
+
+.overlay
+  width: 100vw
+  height: 100vh
+  position: absolute
+  top: 0
+  left: 0
+  background-color: #bababae6
+  opacity: 1
+  visibility: visible
+  transition: all .7s ease
+  .hint
+    width: 400px
+    position: relative
+    top: 90px
+    margin: 0 0 0 auto
+    right: 25px
+    p
+      text-align: right
+      color: #000
+      // text-shadow: 1px .5px #ffc30e
+      &::before
+        content: ""
+        width: 100%
+        height: 2px
+        position: absolute
+        bottom: -5px
+        left: 0
+        background: #fcca00
+        overflow: hidden
+  .title
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      font-size: 20px
+      max-width: 800px
+      width: 100%
+      text-align: center
+
+
+  
+  .closeHelp
+    position: absolute
+    bottom: 100px
+    height: 50px
+    left: 50%
+    width: 300px
+    transform: translate(-50%, -50%)
+    background-color: #ffc30e
+    border: none
+    border-radius: 8px
+    color: #fff
+    font-size: 24px
+    font-weight: bold
+    letter-spacing: 3px
+    text-shadow: 1px 1px #000
+    box-shadow: 1px 1px #000
+    cursor: pointer
+    transition: background-color .5s
+    &:hover
+      background-color: #e7af05
+
+
+input[type=checkbox]
+  height: 0
+  width: 0
+  visibility: hidden
+
+.method
+  position: absolute
+  top: 75px
+  right: 25px
+  display: inline-block
+  font-size: 14px
+  &__text
+    color: #898989a5
+    transition: color .4s ease-out
+  .active
+    color: #ffc30e
+    font-weight: bold
+
+.helpers
+  display: flex
+  flex-direction: row
+  position: absolute
+  top: 20px
+  right: 20px
+
+  .openHelp
+    position: relative
+    top: -22px
+    svg
+      cursor: pointer
+      transition: fill .5s
+      &:hover
+        path
+          fill: #e7af05
+          transition: fill .5s
+
+  label 
+    cursor: pointer
+    text-indent: -9999px
+    width: 100px
+    height: 50px
+    background: grey
+    display: block
+    border-radius: 100px
+    position: relative
+
+
+  label:after 
+    content: ''
+    position: absolute
+    top: 5px
+    left: 5px
+    width: 40px
+    height: 40px
+    background: #fff
+    border-radius: 90px
+    transition: 0.3s
+
+
+  input:checked + label 
+    background: #bada55
+
+
+  input:checked + label:after 
+    left: calc(100% - 5px)
+    transform: translateX(-100%)
+
+
+  label:active:after 
+    width: 130px
+
+.hidden
+  visibility: hidden
+  opacity: 0
+
+
+@import canvas
